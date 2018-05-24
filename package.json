@@ -1,0 +1,29 @@
+{
+  "name": "BartenderAssessment",
+  "description": "Beadandó feladat a WebTech II órára.",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap-sass": "^3.3.7",
+    "bowserify": "^10.2.1",
+    "express": "^4.16.2",
+    "jquery": "3.3.1",
+    "mongoose": "^5.0.13",
+    "popper.js": "^1.14.3",
+    "startbootstrap-heroic-features": "^4.0.0",
+    "typescript": "^2.7.2",
+    "uglify-js": "^3.3.21"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "prestart": "npm run css && npm run js",
+    "js": "browserify js/bundle.js | uglifyjs > public/js/bundle.js",
+    "css": "sass scss/myStyle.scss -t compressed public/css/style.css"
+  },
+  "_scripts": {
+    "js": "browserify js/bundle.js | uglifyjs > public/js/bundle.js",
+    "css": "sass scss/myStyle.scss -t compressed public/css/style.css",
+    "prestart": "npm run css && npm run js",
+    "start": "node app.js"
+  }
+}
