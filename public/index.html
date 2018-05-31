@@ -21,34 +21,28 @@
 </head>
 
 <body>
-
-<script src="js/bundle.js"></script>
-
-<!-- Navigation -->
+<!-- Navigation fixed-top -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand" href="#">Étterem</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!--<div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
+                    <a class="nav-link" href="#top">Oldalunk
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#choices">Ételek</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#drinks">Italok</a>
                 </li>
             </ul>
-        </div>-->
+        </div>
     </div>
 </nav>
 
@@ -57,7 +51,7 @@
 
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
-        <h1 class="display-3">Üdvözöljük az oldalunkon!</h1>
+        <h1 class="display-3" id="top">Üdvözöljük az oldalunkon!</h1>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
         <a href="#choices" class="btn btn-primary btn-lg">Ételválaszték</a>
         <a href="#drinks" class="btn btn-secondary btn-lg">Italválaszték</a>
@@ -65,6 +59,10 @@
 
     <!-- Page Features -->
     <div class="row text-center" id="choices">
+        <!-- Utólag kitöltve JavaScript-tel! -->
+    </div>
+
+    <div class="row text-center" id="drinks">
         <!-- Utólag kitöltve JavaScript-tel! -->
     </div>
     <!-- /.row -->
@@ -81,6 +79,7 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
+<script src="js/bundle.js"></script>
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
