@@ -17,7 +17,7 @@ var OrderSchema = new Schema({
         price: Number
     }],
     bartendersName: String,
-    costumersName: String,
+    customersName: String,
     totalCost: Number
 }, {versionKey: false});
 

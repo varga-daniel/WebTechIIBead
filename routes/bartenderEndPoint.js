@@ -19,7 +19,7 @@ router.post("/add", function (req, res) {
 
 router.post("/completeOrder", function (req, res) {
     Order.update(
-        {costumersName: req.body['costumersName']},
+        {customersName: req.body['customersName']},
         {$set: {received: true, fulfilled: true, status: "Closed"}}, function (err, doc) {
             if (err !== null) {
                 res.status(500).send(err);

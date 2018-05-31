@@ -21,7 +21,7 @@ router.post("/add", function (req, res) {
         received: false,
         foods: req.body['foods'],
         bartendersName: req.body['bartendersName'],
-        costumersName: req.body['costumersName'],
+        customersName: req.body['customersName'],
         totalCost: price
     }, function (err, doc) {
         if (err !== null) {

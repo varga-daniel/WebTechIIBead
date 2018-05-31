@@ -3,7 +3,7 @@ var router = express.Router();
 var Bartender = require('./objects/Bartender');
 var Order = require('./objects/Order');
 var Food = require('./objects/Food');
-var Costumer = require('./objects/Costumer');
+var Customer = require('./objects/Customer');
 var mongoose = require('mongoose');
 
 var getTotalPrice = function (foods) {
@@ -35,14 +35,14 @@ router.get('/', function (req, res) {
             }
         });
     });
-    var costumers = [
+    var customers = [
         {name: "Vásárló Ferenc", address: "Valami út 1."},
         {name: "Rendelő Géza", address: "Akármi utca 6."},
         {name: "Éhes Hanna", address: "Tetszőleges körút 11/a."}
     ];
 
-    costumers.forEach(function (item) {
-        Costumer.create({
+    customers.forEach(function (item) {
+        Customer.create({
             _id: new mongoose.Types.ObjectId(),
             name: item['name'],
             address: item['address']
@@ -149,7 +149,7 @@ router.get('/', function (req, res) {
                 {name: "Víz", price: 50}
             ],
             bartendersName: "Második Béla",
-            costumersName: "Rendelő Géza"
+            customersName: "Rendelő Géza"
         },
         {
             status: "Open",
@@ -161,7 +161,7 @@ router.get('/', function (req, res) {
                 {name: "Gyümölcsszörp", price: 110}
             ],
             bartendersName: "Ötödik Elemér",
-            costumersName: "Éhes Hanna"
+            customersName: "Éhes Hanna"
         },
         {
             status: "Open",
@@ -172,7 +172,7 @@ router.get('/', function (req, res) {
                 {name: "Forró Csokoládé", price: 150}
             ],
             bartendersName: "Negyedik Dénes",
-            costumersName: "Vásárló Ferenc"
+            customersName: "Vásárló Ferenc"
         }
     ];
 
@@ -189,7 +189,7 @@ router.get('/', function (req, res) {
             received: item['received'],
             foods: ordersFood,
             bartendersName: item['bartendersName'],
-            costumersName: item['costumersName'],
+            customersName: item['customersName'],
             totalCost: price
         }, function (err, doc) {
             if (err !== null) {

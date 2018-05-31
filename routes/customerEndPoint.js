@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Costumer = require('./objects/Costumer');
+var Customer = require('./objects/Customer');
 var Order = require('./objects/Order');
 var Food = require('./objects/Food');
 var mongoose = require('mongoose');
@@ -14,7 +14,7 @@ var getTotalPrice = function (foods) {
 };
 
 router.post("/add", function (req, res) {
-    Costumer.create({
+    Customer.create({
         _id: new mongoose.Types.ObjectId(),
         name: req.body['name'],
         address: req.body['address']
@@ -37,7 +37,7 @@ router.post('/order', function (req, res) {
         received: false,
         foods: foods,
         bartendersName: req.body['bartendersName'],
-        costumersName: req.body['costumersName'],
+        customersName: req.body['customersName'],
         totalCost: price
     }, function (err, doc) {
         if (err !== null) {

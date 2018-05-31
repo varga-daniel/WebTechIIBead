@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var db = require('./Restaurant');
 var Schema = mongoose.Schema;
 
-var CostumerSchema = new Schema({
+var CustomerSchema = new Schema({
     _id: Schema.ObjectId,
     name: String,
     address: String
@@ -10,4 +10,4 @@ var CostumerSchema = new Schema({
     versionKey: false
 });
 
-module.exports = db.model("Costumer", CostumerSchema);
+module.exports = db.model("Customer", CustomerSchema);
