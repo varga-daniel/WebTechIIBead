@@ -74,6 +74,44 @@ router.get('/', function (req, res) {
             ]
         },
         {
+            type: "Drink",
+            name: "Forró Csokoládé",
+            price: 150,
+            ingredients: [
+                "Csokoládé"
+            ]
+        },
+
+        {
+            type: "Food",
+            name: "Kijevi Pulykamell",
+            price: 950,
+            ingredients: [
+                "Rizs",
+                "Pulykamell"
+            ]
+        },
+        {
+            type: "Food",
+            name: "Gyros tál",
+            price: 890,
+            ingredients: [
+                "Csirke",
+                "Hasábburgonya",
+                "Saláta",
+                "Öntet"
+            ]
+        },
+        {
+            type: "Food",
+            name: "Rántott Csirkemell Filé",
+            price: 850,
+            ingredients: [
+                "Csirkemell",
+                "Hasábburgonya"
+            ]
+        },
+        {
             type: "Food",
             name: "Gulyásleves",
             price: 980,
@@ -124,6 +162,17 @@ router.get('/', function (req, res) {
             ],
             bartendersName: "Ötödik Elemér",
             costumersName: "Éhes Hanna"
+        },
+        {
+            status: "Open",
+            fulfilled: false,
+            received: true,
+            foods: [
+                {name: "Rántott Csirkemell Filé", price: 850},
+                {name: "Forró Csokoládé", price: 150}
+            ],
+            bartendersName: "Negyedik Dénes",
+            costumersName: "Vásárló Ferenc"
         }
     ];
 
