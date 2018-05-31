@@ -4,6 +4,10 @@ var personOrdering = "";
 var ordersSoFar = [];
 
 $(document).ready(function(){
+    // ================================
+    // Az ételek feltöltése.
+    // ================================
+
     $.get('/customer/getFoods', function (data) {
         //console.log(data);
 
@@ -53,7 +57,11 @@ $(document).ready(function(){
 
             $('#choices').append(holder);
         }
-    })
+    });
+
+    // ================================
+    // Az italok feltöltése.
+    // ================================
 
     $.get('/customer/getDrinks', function (data) {
         //console.log(data);
@@ -104,7 +112,73 @@ $(document).ready(function(){
 
             $('#drinks').append(holder);
         }
-    })
+    });
+
+    // ================================
+    // A rendelések feltöltése.
+    // ================================
+
+    $.get('/manager/listOrders', function (data) {
+        console.log(data);
+
+        for (var i = 0; i < data.length; i++) {
+            var holder = document.createElement('div');
+            holder.className += " col-lg-4 col-md-6 mb-4";
+
+            var card = document.createElement('div');
+            card.className += " card";
+
+            var body = document.createElement('div');
+            body.className += " card-body";
+
+            var title = document.createElement('h3');
+            title.className += " card-title"
+            title.innerHTML = data[i].customersName;
+            body.append(title);
+
+            var bartender = document.createElement('p');
+            bartender.innerHTML = "Intézi: " + data[i].bartendersName;
+            body.append(bartender);
+
+            var status = document.createElement('p');
+            if (data[i].status == "Open") {
+                status.innerHTML = "Szabad"
+            } else {
+                status.innerHTML = "Lezárva"
+            }
+            body.append(status);
+
+            var progress = document.createElement('p');
+            if (data[i].received == false) {
+                progress.innerHTML = "Nem kapta meg"
+            } else {
+                progress.innerHTML = "Megkapta"
+            }
+
+            if (data[i].fulfilled == false) {
+                progress.innerHTML += ", nincs teljesítve"
+            } else {
+                progress.innerHTML += ", teljesítve"
+            }
+            body.append(progress);
+
+            var order_list = document.createElement('ul');
+            order_list.className += "list-group";
+
+            for (j = 0; j < data[i].foods.length; j++) {
+                var list_item = document.createElement('li');
+                list_item.className += " list-group-item";
+                list_item.innerHTML = data[i].foods[j].name + " (" +data[i].foods[j].price + ")";
+                order_list.append(list_item);
+            };
+            body.append(order_list);
+
+            card.append(body);
+            holder.append(card);
+
+            $('#orders').append(holder);
+        }
+    });
 });
 
 function addNewOrder(name, price) {
